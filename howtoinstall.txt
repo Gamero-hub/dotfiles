@@ -1,0 +1,37 @@
+#!/bin/bash
+
+echo "Hola, bienvenido al instaldor de dotfiles"
+
+
+sudo pacman -Syu yay paru 
+
+sudo pacman -Syu chaotic-mirrorlist
+
+ yay -Syu $(cat ./pkglist) 
+
+ cp -rf ./config/* ~/.config/
+
+#Instalando dwm
+
+cd ~/.config/suckless/dwm
+
+sudo make clean install
+
+cd ~/.config/suckless/rsblocks/
+
+cargo build --release
+sudo cp ~/.config/suckless/rsblocks/target/release/rsblocks.d /usr/local/bin/
+
+sudo cp -rf ~/.config/suckless/things/dwm.desktop /usr/share/xsessions/
+
+#Copiando startship
+cd ~/dotfile/
+
+cp -rf ~/dotfiles/things/starship.toml ~/.config/
+
+cp -rf ~/dotfiles/things/.dwm ~/
+
+#Instalando Dank Mono Font
+font-manager -i ~/dotfile/things/Dank Mono Regular.otf
+
+
