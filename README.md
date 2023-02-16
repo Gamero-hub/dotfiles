@@ -12,4 +12,4 @@ First
   - `[chaotic-aur]`
   - `Include = /etc/pacman.d/chaotic-mirrorlist`
 
-Next, Run the  look at the howtoinstall.txt
+Next, look the howtoinstall.txt
